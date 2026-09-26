@@ -3,7 +3,12 @@ import qrcode
 import base64
 from io import BytesIO
 
-app = Flask(__name__)
+app = Flask(
+    __name__,
+    static_folder="static",
+    static_url_path="/static",
+    template_folder="templates"
+)
 
 
 @app.route("/")
